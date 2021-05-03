@@ -1,0 +1,65 @@
+
+.fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1.3s;
+    animation-timing-function: cubic-bezier(0, 0, 0.4, 1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+    opacity: 0;
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+    }
+
+    to {
+    opacity: 1;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    }
+}
+
+.handy-code {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.handy-box {
+    flex-wrap: wrap
+}
+@media (min-width: 600px) {
+    .handy-code {
+        width:50%;
+        margin-bottom: auto;
+    }
+    .handy-box {
+        flex-wrap: nowrap
+    }
+}
+.handy-spacing {
+    padding: 5px;
+    padding: clamp(5px,3vw,30px);
+}
+.handy-verticalText {
+
+  transform: rotate(-90deg);
+
+
+  /* Legacy vendor prefixes that you probably don't need... */
+
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+
+  /* IE */
+  -ms-transform: rotate(-90deg);
+
+  /* Opera */
+  -o-transform: rotate(-90deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
