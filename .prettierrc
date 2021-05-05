@@ -1,17 +1,4 @@
 {
-  "printWidth": 80,
-  "tabWidth": 2,
-  "useTabs": false,
-  "semi": false,
-  "singleQuote": true,
-  "quoteProps": "as-needed",
-  "jsxSingleQuote": true,
-  "trailingComma": "es5",
-  "bracketSpacing": true,
-  "jsxBracketSameLine": false,
-  "arrowParens": "avoid",
-  "requirePragma": false,
-  "insertPragma": false,
-  "endOfLine": "lf",
-  "embeddedLanguageFormatting": "auto"
+    "tabWidth": 4,
+    "printWidth": 120
 }
