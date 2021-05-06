@@ -1,17 +1,17 @@
 import { Container, Sprite, Loader, Application } from "pixi.js";
 import { loadGameAssets } from "./utils/loadGameAssets";
 import "./style.css";
-import { tryMove } from "./utils/tryMove";
 import { randomInt } from "./utils/randomInt";
-import { hitTestPoints } from "./utils/hitTestPoints";
 import { getBird } from "./utils/getBird";
 import { initInputHandler } from "./utils/initInputHandler";
 import { Explorer } from "./models/Explorer";
 import { initExplorer } from "./utils/initExplorer";
-import { gameWidth, gameHeight } from "./states/app";
+import { gameWidth, gameHeight, numberOfMobs } from "./states/app";
 import { initApp } from "./utils/initApp";
 import { initState } from "./utils/initState";
-import { playerMove } from "./utils/playerMove";
+import { Mob } from "./models/Mob";
+import { Item } from "./models/Item";
+import { walking } from "./utils/walking";
 
 declare const VERSION: string;
 
@@ -21,6 +21,11 @@ declare global {
             app: Application;
             explorer: Explorer;
             scene: Container;
+            mobs: Mob[];
+            items: Item[];
+            tmpState: {
+                mobFrameCounter: number;
+            };
         };
     }
 }
@@ -46,15 +51,7 @@ window.onload = async (): Promise<void> => {
 
 const resources = Loader.shared.resources;
 
-let state: (delta: number) => void,
-    treasure,
-    dungeon,
-    door,
-    id,
-    mobFrameCounter = 0,
-    mobFrameFlip = false;
-const blobs: Sprite[] = [],
-    numberOfBlobs = 10;
+let state: (delta: number) => void, treasure, dungeon, door, id;
 function initGame() {
     const scene: Container = window.henrik.scene;
     stage.addChild(scene);
@@ -72,44 +69,22 @@ function initGame() {
     scene.addChild(treasure);
     const spacing = 48,
         xOffset = 150;
-    for (let i = 0; i < numberOfBlobs; i++) {
-        const blob = new Sprite(id!["blob.png"]);
+    const mobs: Mob[] = window.henrik.mobs;
+    for (let i = 0; i < numberOfMobs; i++) {
+        const blob = new Mob([id!["blob.png"], id!["treasure.png"]]);
         const x = spacing * i + xOffset;
         const y = randomInt(0, stage.height - blob.height);
         blob.x = x;
         blob.y = y;
-        blobs.push(blob);
+        blob.type = randomInt(0, 4);
+        blob.quest = randomInt(0, 4);
+        mobs.push(blob);
         scene.addChild(blob);
     }
     initExplorer();
     initInputHandler();
-    state = play;
+    state = walking;
 }
 function gameLoop(delta: number) {
     state(delta);
 }
-function play(delta: number) {
-    playerMove(delta);
-    mobMove(delta);
-}
-const mobMove = (delta: number) => {
-    const explorer: Explorer = window.henrik.explorer;
-    mobFrameFlip = !mobFrameFlip;
-    for (let index = mobFrameFlip ? 0 : 1; index < blobs.length; index += 2) {
-        const thisFrameblobs = blobs[index];
-        ({ x: thisFrameblobs.x, y: thisFrameblobs.y } = tryMove(
-            thisFrameblobs,
-            explorer.pos.x - thisFrameblobs.x,
-            explorer.pos.y - thisFrameblobs.y,
-            1,
-            delta
-        ));
-    }
-    mobFrameCounter = (mobFrameCounter + 1) % numberOfBlobs;
-    const thisFrameblob = blobs[mobFrameCounter];
-    if (hitTestPoints(explorer.pos, thisFrameblob)) {
-        thisFrameblob.alpha = 0.5;
-    } else {
-        thisFrameblob.alpha = 1;
-    }
-};

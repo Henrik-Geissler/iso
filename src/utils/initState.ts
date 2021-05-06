@@ -1,5 +1,6 @@
 import { Application } from "@pixi/app";
 import { Container } from "@pixi/display";
+import { ExplorerState } from "../models/enums/ExplorerState";
 import { gameWidth, gameHeight } from "../states/app";
 
 export function initState(): void {
@@ -22,7 +23,13 @@ export function initState(): void {
             },
             width: 0,
             height: 0,
+            state: ExplorerState.Idle,
         },
         scene: new Container(),
+        mobs: [],
+        items: [],
+        tmpState: {
+            mobFrameCounter: 0,
+        },
     };
 }
