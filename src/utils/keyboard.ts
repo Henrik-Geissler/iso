@@ -1,5 +1,5 @@
 import { Key } from "../models/Key";
-export function keyboard(keyCode: number) {
+export function keyboard(keyCode: number): Key {
     const key: Key = {
         code: keyCode,
         isDown: false,
@@ -27,7 +27,6 @@ export function keyboard(keyCode: number) {
             event.preventDefault();
         },
     };
-    //Attach event listeners
     window.addEventListener("keydown", key.downHandler.bind(key), false);
     window.addEventListener("keyup", key.upHandler.bind(key), false);
     return key;

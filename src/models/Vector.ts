@@ -4,31 +4,31 @@ export class Vector extends Point {
     constructor(x: number, y: number) {
         super(x, y);
     }
-    multiply(v: number) {
+    multiply(v: number): Vector {
         this.x *= v;
         this.y *= v;
         return this;
     }
-    normalize() {
+    normalize(): Vector {
         return this.divide(this.length());
     }
-    length() {
+    length(): number {
         return Math.sqrt(this.dot(this));
     }
-    dot(v: IPointData) {
+    dot(v: IPointData): number {
         return this.x * v.x + this.y * v.y;
     }
-    divide(v: number) {
+    divide(v: number): Vector {
         if (v != 0) {
             this.x /= v;
             this.y /= v;
         }
         return this;
     }
-    copy() {
+    copy(): Vector {
         return new Vector(this.x, this.y);
     }
-    add(v: IPointData) {
+    add(v: IPointData): Vector {
         this.x += v.x;
         this.y += v.y;
         return this;
