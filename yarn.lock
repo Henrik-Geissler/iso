@@ -76,13 +76,13 @@
     browserslist "^4.14.5"
     semver "^6.3.0"
 
-"@babel/helper-create-class-features-plugin@^7.13.0", "@babel/helper-create-class-features-plugin@^7.13.11", "@babel/helper-create-class-features-plugin@^7.14.0":
-  version "7.14.1"
-  resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.14.1.tgz#1fe11b376f3c41650ad9fedc665b0068722ea76c"
-  integrity sha512-r8rsUahG4ywm0QpGcCrLaUSOuNAISR3IZCg4Fx05Ozq31aCUrQsTLH6KPxy0N5ULoQ4Sn9qjNdGNtbPWAC6hYg==
+"@babel/helper-create-class-features-plugin@^7.13.0", "@babel/helper-create-class-features-plugin@^7.14.0", "@babel/helper-create-class-features-plugin@^7.14.2":
+  version "7.14.2"
+  resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.14.2.tgz#4e455b0329af29c2d3ad254b5dd5aed34595385d"
+  integrity sha512-6YctwVsmlkchxfGUogvVrrhzyD3grFJyluj5JgDlQrwfMLJSt5tdAzFZfPf4H2Xoi5YLcQ6BxfJlaOBHuctyIw==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.12.13"
-    "@babel/helper-function-name" "^7.12.13"
+    "@babel/helper-function-name" "^7.14.2"
     "@babel/helper-member-expression-to-functions" "^7.13.12"
     "@babel/helper-optimise-call-expression" "^7.12.13"
     "@babel/helper-replace-supers" "^7.13.12"
@@ -125,6 +125,15 @@
     "@babel/helper-get-function-arity" "^7.12.13"
     "@babel/template" "^7.12.13"
     "@babel/types" "^7.12.13"
+
+"@babel/helper-function-name@^7.14.2":
+  version "7.14.2"
+  resolved "https://registry.yarnpkg.com/@babel/helper-function-name/-/helper-function-name-7.14.2.tgz#397688b590760b6ef7725b5f0860c82427ebaac2"
+  integrity sha512-NYZlkZRydxw+YT56IlhIcS8PAhb+FEUiOzuhFTfqDyPmzAhRge6ua0dQYT/Uh0t/EDHq05/i+e5M2d4XvjgarQ==
+  dependencies:
+    "@babel/helper-get-function-arity" "^7.12.13"
+    "@babel/template" "^7.12.13"
+    "@babel/types" "^7.14.2"
 
 "@babel/helper-get-function-arity@^7.12.13":
   version "7.12.13"
@@ -298,12 +307,12 @@
     "@babel/helper-plugin-utils" "^7.13.0"
     "@babel/plugin-syntax-class-static-block" "^7.12.13"
 
-"@babel/plugin-proposal-decorators@^7.13.15":
-  version "7.13.15"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.13.15.tgz#e91ccfef2dc24dd5bd5dcc9fc9e2557c684ecfb8"
-  integrity sha512-ibAMAqUm97yzi+LPgdr5Nqb9CMkeieGHvwPg1ywSGjZrZHQEGqE01HmOio8kxRpA/+VtOHouIVy2FMpBbtltjA==
+"@babel/plugin-proposal-decorators@^7.14.2":
+  version "7.14.2"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.14.2.tgz#e68c3c5e4a6a08834456568256fc3e71b93590cf"
+  integrity sha512-LauAqDd/VjQDtae58QgBcEOE42NNP+jB2OE+XeC3KBI/E+BhhRjtr5viCIrj1hmu1YvrguLipIPRJZmS5yUcFw==
   dependencies:
-    "@babel/helper-create-class-features-plugin" "^7.13.11"
+    "@babel/helper-create-class-features-plugin" "^7.14.2"
     "@babel/helper-plugin-utils" "^7.13.0"
     "@babel/plugin-syntax-decorators" "^7.12.13"
 
@@ -937,6 +946,14 @@
   version "7.14.1"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.14.1.tgz#095bd12f1c08ab63eff6e8f7745fa7c9cc15a9db"
   integrity sha512-S13Qe85fzLs3gYRUnrpyeIrBJIMYv33qSTg1qoBwiG6nPKwUWAD9odSzWhEedpwOIzSEI6gbdQIWEMiCI42iBA==
+  dependencies:
+    "@babel/helper-validator-identifier" "^7.14.0"
+    to-fast-properties "^2.0.0"
+
+"@babel/types@^7.14.2":
+  version "7.14.2"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.14.2.tgz#4208ae003107ef8a057ea8333e56eb64d2f6a2c3"
+  integrity sha512-SdjAG/3DikRHpUOjxZgnkbR11xUlyDMUFJdvnIgZEE16mqmY0BINMmc4//JMJglEmn6i7sq6p+mGrFWyZ98EEw==
   dependencies:
     "@babel/helper-validator-identifier" "^7.14.0"
     to-fast-properties "^2.0.0"
@@ -1775,13 +1792,6 @@
   integrity sha512-EGkrJD5Uy+Pg0NUR8uA4bJ5WMfljyad0G+784vLCNUkD+QwOJXUbBYExXfVGf7YtyzdQp3L/XMYcliB987kL5Q==
   dependencies:
     source-map "^0.6.1"
-
-"@types/webpack-merge@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@types/webpack-merge/-/webpack-merge-5.0.0.tgz#818a13948c1642bde7e2f4f079335a5f85365699"
-  integrity sha512-CFedsXD/7vmJ66PaC3eavdqqNZujWlvdkGFcizi0QPtDswK75DV7a5GTKzL9Ev6d0okLurq+ebQjwIEFmP9aZw==
-  dependencies:
-    webpack-merge "*"
 
 "@types/webpack-sources@*":
   version "2.1.0"
@@ -8687,7 +8697,7 @@ webpack-dev-server@^4.0.0-beta.0:
     webpack-dev-middleware "^4.1.0"
     ws "^7.4.4"
 
-webpack-merge@*, webpack-merge@^5.7.3:
+webpack-merge@^5.7.3:
   version "5.7.3"
   resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-5.7.3.tgz#2a0754e1877a25a8bbab3d2475ca70a052708213"
   integrity sha512-6/JUQv0ELQ1igjGDzHkXbVDRxkfA57Zw7PfiupdLFJYrgFqY5ZP8xxbpp2lU3EPwYx89ht5Z/aDkD40hFCm5AA==
