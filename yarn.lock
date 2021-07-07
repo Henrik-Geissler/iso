@@ -1677,10 +1677,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^26.0.23":
-  version "26.0.23"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.23.tgz#a1b7eab3c503b80451d019efb588ec63522ee4e7"
-  integrity sha512-ZHLmWMJ9jJ9PTiT58juykZpL7KjwJywFN3Rr2pTSkyQfydf/rk22yS7W8p5DaVUMQ2BQC7oYiU3FjbTM/mYrOA==
+"@types/jest@^26.0.24":
+  version "26.0.24"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.24.tgz#943d11976b16739185913a1936e0de0c4a7d595a"
+  integrity sha512-E/X5Vib8BWqZNRlDxj9vYXhsDwPYbPINqKF9BsnSoon4RQ0D9moEuLD8txgyypFLH7J4+Lho9Nr/c8H0Fi+17w==
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
@@ -1775,13 +1775,6 @@
   integrity sha512-EGkrJD5Uy+Pg0NUR8uA4bJ5WMfljyad0G+784vLCNUkD+QwOJXUbBYExXfVGf7YtyzdQp3L/XMYcliB987kL5Q==
   dependencies:
     source-map "^0.6.1"
-
-"@types/webpack-merge@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@types/webpack-merge/-/webpack-merge-5.0.0.tgz#818a13948c1642bde7e2f4f079335a5f85365699"
-  integrity sha512-CFedsXD/7vmJ66PaC3eavdqqNZujWlvdkGFcizi0QPtDswK75DV7a5GTKzL9Ev6d0okLurq+ebQjwIEFmP9aZw==
-  dependencies:
-    webpack-merge "*"
 
 "@types/webpack-sources@*":
   version "2.1.0"
@@ -8687,7 +8680,7 @@ webpack-dev-server@^4.0.0-beta.0:
     webpack-dev-middleware "^4.1.0"
     ws "^7.4.4"
 
-webpack-merge@*, webpack-merge@^5.7.3:
+webpack-merge@^5.7.3:
   version "5.7.3"
   resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-5.7.3.tgz#2a0754e1877a25a8bbab3d2475ca70a052708213"
   integrity sha512-6/JUQv0ELQ1igjGDzHkXbVDRxkfA57Zw7PfiupdLFJYrgFqY5ZP8xxbpp2lU3EPwYx89ht5Z/aDkD40hFCm5AA==
